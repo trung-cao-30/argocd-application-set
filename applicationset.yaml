@@ -23,7 +23,7 @@ spec:
       source:
         repoURL: https://github.com/trung-cao-30/argocd-application-set.git
         targetRevision: master
-        path: app/overlays/{{ overlay }}
+        path: overlays/{{ overlay }}
       destination:
         server: https://{{ cluster }}
         namespace: {{ namespace }}
