@@ -8,22 +8,25 @@ spec:
         elements:
           - cluster: kubernetes.default.svc
             namespace: dev
-            overlay: dev
+            env: dev
           - cluster: kubernetes.default.svc
             namespace: staging
-            overlay: staging
+            env: staging
           - cluster: kubernetes.default.svc
             namespace: prod
-            overlay: prod
+            env: prod
   template:
     metadata:
-      name: 'helm-guestbook-{{ overlay }}'
+      name: 'helm-guestbook-{{ env }}'
     spec:
       project: default
       source:
-        repoURL: https://github.com/trung-cao-30/argocd-application-set.git
+        repoURL: https://github.com/trung-cao-30/argocd-example-apps.git
         targetRevision: master
-        path: 'overlays/{{ overlay }}'
+        path: ./helm-guestbook
+        helm:
+          valuesFiles:
+          - '{{ env }}/values.yaml'
       destination:
         server: 'https://{{ cluster }}'
         namespace: '{{ namespace }}'
