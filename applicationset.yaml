@@ -24,9 +24,9 @@ spec:
         repoURL: https://github.com/trung-cao-30/argocd-example-apps.git
         targetRevision: master
         path: ./helm-guestbook
-        helm:
-          valuesFiles:
-          - '{{ env }}/values.yaml'
+        # helm:
+        #   valuesFiles:
+        #   - '{{ env }}/values.yaml'
       destination:
         server: 'https://{{ cluster }}'
         namespace: '{{ namespace }}'
