@@ -7,13 +7,13 @@ spec:
     - list:
         elements:
           - cluster: kubernetes.default.svc
-            namespace: dev-namespace
+            namespace: dev
             overlay: dev
           - cluster: kubernetes.default.svc
-            namespace: staging-namespace
+            namespace: staging
             overlay: staging
           - cluster: kubernetes.default.svc
-            namespace: prod-namespace
+            namespace: prod
             overlay: prod
   template:
     metadata:
