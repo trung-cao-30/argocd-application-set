@@ -25,9 +25,8 @@ spec:
         targetRevision: master
         path: ./helm-guestbook
         helm:
-          valuesFiles:
-          # - '{{ env }}/values.yaml'
-          - 'dev/values.yaml'
+          valueFiles:
+          - '{{ env }}/values.yaml'
       destination:
         server: 'https://{{ cluster }}'
         namespace: '{{ namespace }}'
