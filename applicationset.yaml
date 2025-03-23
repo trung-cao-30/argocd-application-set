@@ -21,7 +21,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/your-org/your-repo.git
+        repoURL: https://github.com/trung-cao-30/argocd-application-set.git
         targetRevision: main
         path: app/overlays/{{ overlay }}
       destination:
