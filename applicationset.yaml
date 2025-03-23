@@ -17,16 +17,16 @@ spec:
             overlay: prod
   template:
     metadata:
-      name: 'helm-guestbook-{{.overlay}}'
+      name: 'helm-guestbook-{{ overlay }}'
     spec:
       project: default
       source:
         repoURL: https://github.com/trung-cao-30/argocd-application-set.git
         targetRevision: master
-        path: 'overlays/{{.overlay}}'
+        path: 'overlays/{{ overlay }}'
       destination:
-        server: 'https://{{.cluster}}'
-        namespace: '{{.namespace}}'
+        server: 'https://{{ cluster }}'
+        namespace: '{{ namespace }}'
       syncPolicy:
         automated:
           prune: true
