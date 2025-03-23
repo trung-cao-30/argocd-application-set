@@ -3,5 +3,4 @@ kind: Kustomization
 
 resources:
   - repository.yaml
-  - chart.yaml
   - release.yaml
