@@ -7,8 +7,8 @@ spec:
   releaseName: helm-guestbook
   chart:
     spec:
-      chart: helm-guestbook
+      chart: ./helm-guestbook
       sourceRef:
-        kind: HelmChart
+        kind: GitRepository
         name: helm-guestbook
         namespace: flux-system
